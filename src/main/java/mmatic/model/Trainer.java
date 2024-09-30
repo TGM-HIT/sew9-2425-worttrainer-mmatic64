@@ -13,7 +13,7 @@ import java.util.Random;
  */
 public class Trainer {
     private ArrayList<Paar> liste = new ArrayList<>();
-    private Paar gEintrag; //gew�hlte Paar
+    private Paar sPaar; // selected Paar
     private int gesamtAnzahl = 0;
     private int richtigAnzahl = 0;
     private int falschAnzahl = 0;
@@ -29,30 +29,26 @@ public class Trainer {
     }
     
     /**
-     * Waehlt eine zufaellige Paar und speichert es im Attribut gEintrag
+     * Waehlt eine zufaellige Paar und speichert es im Attribut sPaar
      */
     public void select() {
         Random rn = new Random();
-        gEintrag = liste.get(rn.nextInt(liste.size()));
+        sPaar = liste.get(rn.nextInt(liste.size()));
     }
 
     /**
-     * W�hlt eine zufaellige Paar und speichert es im Attribut gEintrag
+     * W�hlt eine zufaellige Paar und speichert es im Attribut sPaar
      */
     public void select(int i) {
-        gEintrag = liste.get(i);
-    }
-
-    public void deselect() {
-        gEintrag = null;
+        sPaar = liste.get(i);
     }
 
     /**
      * Gibt dem in der obere Methode gewaehlte Paar zur�ck
-     * @return gEintrag der in obere Methode gewaehlte Paar
+     * @return sPaar der in obere Methode gewaehlte Paar
      */
-    public Paar getPaar() {
-        return gEintrag;
+    public Paar getBild() {
+        return sPaar;
     }
     
     /**
@@ -63,9 +59,9 @@ public class Trainer {
      */
     public boolean guess(String wort) throws IllegalArgumentException{
         if(wort != null) {
-            boolean richtig = gEintrag.getWort().equals(wort) ? true : false;
+            boolean richtig = sPaar.getWort().equals(wort) ? true : false;
             if (richtig) {
-                gEintrag = null;
+                select();
             }
             return statistic(richtig);
         }
@@ -79,11 +75,7 @@ public class Trainer {
      * @throws IllegalArgumentException wenn der Parameter ungueltig ist
      */
     public boolean guessIgnoreCase(String wort) throws IllegalArgumentException {
-        if(wort != null) {
-            boolean richtig = gEintrag.getWort().toLowerCase().equals(wort.toLowerCase()) ? true : false;
-            return statistic(richtig);
-        }
-        throw new IllegalArgumentException("Ungueltige Parameter");
+        return guess(wort.toLowerCase());
     }
 
     /**
@@ -133,6 +125,10 @@ public class Trainer {
      */
     public void addPaar(String wort, String url) throws IllegalArgumentException{
         liste.add(new Paar(wort, url));
+    }
+
+    public void addPaar(Paar paar) {
+        liste.add(paar);
     }
 
     /**
