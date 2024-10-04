@@ -56,7 +56,7 @@ public class Paar {
 			}while(i < url.length()-2);
 			i = url.length()-1;
 			if(url.charAt(i) == '.') {
-				throw new IllegalArgumentException("URL darf sich nicht mit \".\" enden!");
+				throw new IllegalArgumentException("URL darf sich nicht mit \".\" beenden!");
 			}
 			if(ende)
 				return ende;
@@ -90,7 +90,7 @@ public class Paar {
 			if(wort.length() < 2) {
 				throw new IllegalArgumentException("Wort muss mindestens 2 Buchstaben haben");
 			}
-			if(!Paar.istBuchstabe((wort.charAt(0))) &&  !Paar.istBuchstabe((wort.charAt(1)))) {
+			if(!Paar.istBuchstabe((wort.charAt(0))) ||  !Paar.istBuchstabe((wort.charAt(1)))) {
 				throw new IllegalArgumentException("Wort muss mindestens 2 Buchstaben haben");
 			}
 			this.wort = wort;

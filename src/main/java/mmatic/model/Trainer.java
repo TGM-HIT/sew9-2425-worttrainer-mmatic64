@@ -19,15 +19,11 @@ public class Trainer {
     private int falschAnzahl = 0;
 
     /**
-     * Konstruktor fuer ganeze Erzeugung
-     * @param paar
+     * Konstruktor fuer Erzeugung
      */
-    public Trainer(Paar paar) throws IllegalArgumentException{
-        if(paar == null)
-            throw new IllegalArgumentException("Liste darf nicht null sein!");
-        this.liste.add(paar);
+    public Trainer() {
     }
-    
+
     /**
      * Waehlt eine zufaellige Paar und speichert es im Attribut sPaar
      */
@@ -103,7 +99,7 @@ public class Trainer {
         return (double)richtigAnzahl / (double)gesamtAnzahl * 100;
     }
 
-    public ArrayList getTrainerListe() {
+    public ArrayList getListe() {
         return liste;
     }
     public int getRichtig() {

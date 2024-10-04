@@ -1,0 +1,2 @@
+Wort1; https://www.google1.com
+Wort2; https://www.google2.com
