@@ -16,7 +16,6 @@ public class Trainer {
     private Paar sPaar; // selected Paar
     private int gesamtAnzahl = 0;
     private int richtigAnzahl = 0;
-    private int falschAnzahl = 0;
 
     /**
      * Konstruktor fuer Erzeugung
@@ -85,9 +84,6 @@ public class Trainer {
         if(richtig) {
             this.richtigAnzahl++;
         }
-        else{
-            this.falschAnzahl++;
-        }
         return richtig;
     }
     
@@ -99,10 +95,9 @@ public class Trainer {
         return (double)richtigAnzahl / (double)gesamtAnzahl * 100;
     }
 
-    public void setStatistic(int gesamt,int richtig,int falsch){
+    public void setStatistic(int gesamt,int richtig){
         this.gesamtAnzahl = gesamt;
         this.richtigAnzahl = richtig;
-        this.falschAnzahl = falsch;
     }
 
     public ArrayList getListe() {
@@ -166,7 +161,7 @@ public class Trainer {
     @Override
     public String toString() {
         String text = "";
-        text += gesamtAnzahl + ";" + richtigAnzahl + ";" + falschAnzahl + "\n";
+        text += gesamtAnzahl + ";" + richtigAnzahl + "\n";
         for (int i = 0; i < liste.size()-1; i++) {
             text += liste.get(i).toString() + "\n";
         }

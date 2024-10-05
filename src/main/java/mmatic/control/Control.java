@@ -89,6 +89,7 @@ public class Control implements ActionListener{
 		else if(ac.equals("laden")) {
 			try {
 				trainer = speicher.laden();
+				refresh();
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
@@ -101,6 +102,7 @@ public class Control implements ActionListener{
     public void refresh(){
     	trainer.select();
     	this.panel.setBild(this.trainer.getBild().getURL());
+		panel.setStatistic(trainer.getRichtig(), trainer.getAbgefragt());
     }
 
 	public static void main(String[] args) {

@@ -34,8 +34,7 @@ public class SelbstDefiniert implements SpeicherStrategie {
             String[] zahlen = zeile.split(";");
             gesamtAnzahl = Integer.parseInt(zahlen[0]);
             richtigAnzahl = Integer.parseInt(zahlen[1]);
-            falschAnzahl = Integer.parseInt(zahlen[2]);
-            trainer.setStatistic(gesamtAnzahl, richtigAnzahl, falschAnzahl);
+            trainer.setStatistic(gesamtAnzahl, richtigAnzahl);
             while (((zeile = inputStream.readLine())) != null) {
                 int i = zeile.indexOf(';');
 

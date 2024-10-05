@@ -1,4 +1,4 @@
-50;8;42
+10;3
 orf; https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/ORF_logo.svg/1200px-ORF_logo.svg.png
 text; https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2015/02/TextFill_image3.png?x62774
 gmail; https://akm-img-a-in.tosshub.com/businesstoday/images/story/201904/gmail-660_040119014433.jpg?size=948:533

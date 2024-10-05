@@ -68,15 +68,15 @@ public class Panel extends JPanel {
         laden.setActionCommand("laden");
         laden.addActionListener(this.control);
 
-        panelSouth.add(new JLabel("Richtige Woerter:"));
+        panelSouth.add(new JLabel("Richtige Antworten:"));
         panelSouth.add(richtig);
         panelSouth.add(new JLabel(""));
 
-        panelSouth.add(new JLabel("Anzahl Woerter:"));
+        panelSouth.add(new JLabel("Anzahl der Versuche:"));
         panelSouth.add(abgefragt);
         panelSouth.add(zuruecksetzen);
 
-        panelSouth.add(new JLabel("Letzte Antwort war:"));
+        panelSouth.add(new JLabel("Letzter Antwort war:"));
         panelSouth.add(last);
         panelSouth.add(hinzufuegen);
         
