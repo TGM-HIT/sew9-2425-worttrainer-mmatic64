@@ -99,6 +99,12 @@ public class Trainer {
         return (double)richtigAnzahl / (double)gesamtAnzahl * 100;
     }
 
+    public void setStatistic(int gesamt,int richtig,int falsch){
+        this.gesamtAnzahl = gesamt;
+        this.richtigAnzahl = richtig;
+        this.falschAnzahl = falsch;
+    }
+
     public ArrayList getListe() {
         return liste;
     }
@@ -160,6 +166,7 @@ public class Trainer {
     @Override
     public String toString() {
         String text = "";
+        text += gesamtAnzahl + ";" + richtigAnzahl + ";" + falschAnzahl + "\n";
         for (int i = 0; i < liste.size()-1; i++) {
             text += liste.get(i).toString() + "\n";
         }

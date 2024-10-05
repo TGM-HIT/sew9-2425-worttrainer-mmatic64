@@ -1,7 +1,6 @@
 package mmatic.model;
 
 import java.io.*;
-import java.util.ArrayList;
 
 /**
  * Diese Klasse ist eine Strategie zum speichern und laden von Trainer Objekten
@@ -27,7 +26,16 @@ public class SelbstDefiniert implements SpeicherStrategie {
     public Trainer laden(String filename) throws FileNotFoundException, IOException {
         try (BufferedReader inputStream = new BufferedReader(new FileReader(filename))) {
             Trainer trainer = new Trainer();
+            int gesamtAnzahl, richtigAnzahl, falschAnzahl;
             String zeile, wort, url;
+            zeile = inputStream.readLine();
+            if (zeile == null)
+                throw new FileNotFoundException("Datei ist leer!");
+            String[] zahlen = zeile.split(";");
+            gesamtAnzahl = Integer.parseInt(zahlen[0]);
+            richtigAnzahl = Integer.parseInt(zahlen[1]);
+            falschAnzahl = Integer.parseInt(zahlen[2]);
+            trainer.setStatistic(gesamtAnzahl, richtigAnzahl, falschAnzahl);
             while (((zeile = inputStream.readLine())) != null) {
                 int i = zeile.indexOf(';');
 

@@ -1,4 +1,7 @@
-import mmatic.model.*;
+import mmatic.model.Paar;
+import mmatic.model.SelbstDefiniert;
+import mmatic.model.Speicher;
+import mmatic.model.Trainer;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -37,5 +40,6 @@ public class SpeicherTest {
         assertEquals(trainer.getPaar(0).getURL(), trainer2.getPaar(0).getURL());
         assertEquals(trainer.getPaar(1).getWort(), trainer2.getPaar(1).getWort());
         assertEquals(trainer.getPaar(1).getURL(), trainer2.getPaar(1).getURL());
+        assertEquals(trainer.getStatistic(), trainer2.getStatistic());
     }
 }
